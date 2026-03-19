@@ -12,7 +12,7 @@
 <!-- Quick Badge Row -->
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Live-c9a84c?style=for-the-badge&labelColor=0a0a0a)](https://adityacs50-lab.github.io/Portfolio)
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Live-c9a84c?style=for-the-badge&labelColor=0a0a0a)](https://portfolio-phi-snowy-40.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-adityacs50--lab-white?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0a0a)](https://github.com/adityacs50-lab)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya_Shinde-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0a0a0a)](https://www.linkedin.com/in/aditya-shinde-307264355/)
 [![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0a0a0a)](mailto:educomedyhq23@gmail.com)
