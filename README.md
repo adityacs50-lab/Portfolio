@@ -24,7 +24,7 @@
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> &nbsp;About Me
 
-<img align="right" alt="Coding" width="320" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif"/>
+<img align="right" alt="Aditya Shinde - Coding Setup" width="320" src="assets/coding-setup.jpg" style="border-radius: 12px;"/>
 
 ```yaml
 name: Aditya Shinde
