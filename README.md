@@ -115,48 +115,118 @@ philosophy: "Code is poetry when it solves real problems."
 
 <br/>
 
-<details>
-<summary><b>✨ Click to expand project details</b></summary>
-<br/>
+---
 
-### 🔮 Hackmate — AI Team Finder
-> *AI-powered hackathon team matching platform with real-time messaging*
+### <img src="https://img.shields.io/badge/⭐_FLAGSHIP-Production_Ready-4ade80?style=flat-square&labelColor=0a0a0a" /> &nbsp; Hackmate — AI-Powered Team Finder
 
-| Feature | Details |
-|---------|---------|
-| 🤖 **AI Matching** | 150+ skill categories with intelligent pairing |
-| 💬 **Real-time DM** | In-app messaging system |
-| 🗄️ **Database** | MongoDB persistent storage |
-| 👥 **Scale** | 1000+ concurrent users |
-| 🛠️ **Stack** | JavaScript, MongoDB, Node.js, AI Integration |
+> **🚀 Actively Developed & Deployment Ready** — *Most Mature Project*
+
+<table>
+<tr>
+<td width="60%">
+
+A full-stack platform that revolutionizes how hackathon participants find teammates. Uses **AI matching algorithms** to connect developers, designers, and entrepreneurs based on skills, experience, and project interests — with a focus on **user privacy** and seamless communication.
+
+**🔑 Key Highlights:**
+- 🤖 AI-powered skill matching across **150+ categories in 14 groups**
+- 💬 **In-app DM chat system** — recently migrated from WhatsApp for enhanced privacy
+- 🗄️ MongoDB integration for persistent, scalable data storage
+- 👥 Handles **1,000+ concurrent users** with real-time notifications
+- 📖 Complete deployment guide & documentation
+
+</td>
+<td width="40%">
+
+```
+🏷️ Status:    Production Ready
+📅 Updated:   March 2026
+🧑‍💻 Stack:     JavaScript
+               Node.js
+               MongoDB
+               AI Integration
+```
+
+[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adityacs50-lab/Hackmate)
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📚 AI Study Assistant
-> *Intelligent study companion powered by Claude AI*
+### <img src="https://img.shields.io/badge/⭐⭐_HIGHLIGHT-Nearly_Production-60a5fa?style=flat-square&labelColor=0a0a0a" /> &nbsp; AI Study Assistant — Claude-Powered Learning
 
-| Feature | Details |
-|---------|---------|
-| 🎯 **ChatGPT-style UI** | Intuitive sidebar navigation |
-| 📄 **PDF Upload** | Support up to 100MB documents |
-| ⚡ **Streaming** | Real-time AI response streaming |
-| ⭐ **Rating** | 4.8/5 user satisfaction |
-| 🛠️ **Stack** | TypeScript, React, Claude API, Tailwind CSS |
+> **🧠 Actively Developed & Nearly Deployment Ready** — *Most Innovative Project*
+
+<table>
+<tr>
+<td width="60%">
+
+An intelligent study companion powered by **Claude AI** that transforms how students learn. Features a modern **ChatGPT-style interface** with sidebar navigation, persistent chat history, and streaming AI responses — making studying feel like chatting with a genius tutor.
+
+**🔑 Key Highlights:**
+- 🎯 **ChatGPT-style UI** with sidebar, top bar & live chat history
+- 📄 PDF document upload support — up to **100MB** per file
+- ⚡ **Real-time streaming** AI responses via Claude API
+- 💾 Persistent memory & message counter across sessions
+- ⭐ **4.8/5** user satisfaction rating
+
+</td>
+<td width="40%">
+
+```
+🏷️ Status:    Nearly Production
+📅 Updated:   March 2026
+🧑‍💻 Stack:     TypeScript
+               React
+               Claude API
+               Tailwind CSS
+               Vite
+```
+
+[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adityacs50-lab/Ai-study-assistant-)
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 🚀 Levaluplife
-> *Modern TypeScript full-stack application with CI/CD*
+### <img src="https://img.shields.io/badge/✅_STABLE-Deployed-a78bfa?style=flat-square&labelColor=0a0a0a" /> &nbsp; Levaluplife — TypeScript Full-Stack App
 
-| Feature | Details |
-|---------|---------|
-| 🔒 **Type-safe** | Full TypeScript implementation |
-| 🗄️ **Database** | Supabase PostgreSQL integration |
-| 🔄 **Real-time** | Live database synchronization |
-| 🚀 **Deployment** | Vercel auto CI/CD pipeline |
-| 🛠️ **Stack** | TypeScript, React, Supabase, PostgreSQL |
+> **🌐 Deployed on Vercel** — *Production-Grade Architecture*
 
-</details>
+<table>
+<tr>
+<td width="60%">
+
+A modern, **type-safe** full-stack application demonstrating professional development practices. Built with React and Supabase, featuring automated deployment pipelines and enterprise-level architecture — proving mastery of the complete development lifecycle.
+
+**🔑 Key Highlights:**
+- 🔒 **93.3% TypeScript** — full type-safe implementation
+- 🗄️ Supabase **PostgreSQL** integration with real-time sync
+- 🚀 **Vercel auto-deployment** with CI/CD pipeline
+- ⚙️ Complete build pipeline with Tailwind CSS & Vite
+- 📋 Database setup documentation included
+
+</td>
+<td width="40%">
+
+```
+🏷️ Status:    Deployed & Stable
+📅 Stack:     TypeScript (93.3%)
+               React
+               Supabase
+               PostgreSQL
+               Vercel
+```
+
+[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adityacs50-lab/Levaluplife)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-c9a84c?style=for-the-badge&logo=vercel&logoColor=black)](https://levaluplife.vercel.app)
+
+</td>
+</tr>
+</table>
 
 <!-- Animated Divider -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
