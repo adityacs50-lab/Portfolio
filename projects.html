@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Aditya Shinde</title>
+    <meta name="description" content="All production-ready projects by Aditya Shinde — Full-Stack Developer & AI Integration Engineer">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .projects-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        .projects-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .projects-hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+        .projects-hero p {
+            font-size: 1rem;
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .back-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0 32px;
+            max-width: var(--container);
+            margin: 0 auto 48px;
+            transition: color var(--transition);
+        }
+        .back-nav:hover { color: var(--gold); }
+        .back-nav i { font-size: 0.7rem; }
+
+        .filter-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 64px;
+            padding: 0 32px;
+        }
+        .filter-btn {
+            padding: 8px 22px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--gray);
+            font-size: 0.78rem;
+            font-weight: 500;
+            font-family: var(--font-sans);
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: var(--gold-glow);
+        }
+
+        .detail-list {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 32px 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        .detail-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .detail-card:hover {
+            border-color: var(--gold-dim);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .detail-top {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+        }
+
+        .detail-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 60px 32px;
+            min-height: 300px;
+        }
+        .detail-visual i.big-icon {
+            font-size: 4rem;
+            color: var(--white);
+            opacity: 0.7;
+        }
+        .detail-visual h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .detail-visual p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .bg-gradient-1 { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
+        .bg-gradient-2 { background: linear-gradient(135deg, #0c1821, #1b2838, #162447); }
+        .bg-gradient-3 { background: linear-gradient(135deg, #1a0a2e, #2d1b69, #11001c); }
+
+        .detail-info {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            width: fit-content;
+            margin-bottom: 16px;
+            background: rgba(74,222,128,0.08);
+            border: 1px solid rgba(74,222,128,0.2);
+            color: var(--green);
+        }
+        .detail-badge .status-pulse {
+            width: 6px; height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        .detail-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .detail-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .detail-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .detail-tech span {
+            padding: 5px 14px;
+            background: var(--black);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .detail-links {
+            display: flex;
+            gap: 16px;
+        }
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--gray);
+            transition: all var(--transition);
+        }
+        .detail-link:hover {
+            color: var(--white);
+            border-color: var(--gold-dim);
+        }
+        .detail-link-primary {
+            background: var(--white);
+            color: var(--black) !important;
+            border-color: var(--white);
+        }
+        .detail-link-primary:hover {
+            background: var(--gold);
+            border-color: var(--gold) !important;
+        }
+
+        .detail-bottom {
+            padding: 36px 48px;
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .detail-section-title {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .features-ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--light);
+            line-height: 1.5;
+        }
+        .features-ul li i {
+            color: var(--gold);
+            margin-top: 4px;
+            flex-shrink: 0;
+            font-size: 0.7rem;
+        }
+
+        .impact-box {
+            font-size: 0.9rem;
+            color: var(--light);
+            line-height: 1.7;
+            padding: 20px;
+            background: var(--gold-glow);
+            border: 1px solid var(--gold-dim);
+            border-radius: 8px;
+        }
+        .impact-box i {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .detail-top { grid-template-columns: 1fr; }
+            .detail-visual { min-height: 200px; padding: 40px 20px; }
+            .detail-info { padding: 24px; }
+            .detail-bottom { grid-template-columns: 1fr; padding: 24px; }
+            .detail-links { flex-direction: column; }
+            .detail-link { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <div class="gold-dots" aria-hidden="true" id="goldDots"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">AS<span class="logo-dot">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#home" class="nav-link" data-index="01">Home</a>
+                <a href="index.html#work" class="nav-link active" data-index="02">Work</a>
+                <a href="index.html#skills" class="nav-link" data-index="03">Skills</a>
+                <a href="index.html#about" class="nav-link" data-index="04">About</a>
+                <a href="index.html#contact" class="nav-link" data-index="05">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html#home" class="mobile-link">Home</a>
+            <a href="index.html#work" class="mobile-link">Work</a>
+            <a href="index.html#skills" class="mobile-link">Skills</a>
+            <a href="index.html#about" class="mobile-link">About</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1 class="reveal">All <em>Projects</em><span class="gold-accent">.</span></h1>
+            <p class="reveal">A deep dive into every production-ready application I've built</p>
+        </div>
+        <div class="dots-cluster" style="top:20%;left:6%;" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="dots-cluster" style="bottom:15%;right:6%;" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- BACK -->
+    <a href="index.html" class="back-nav reveal">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- FILTERS -->
+    <div class="filter-row reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="production">Production</button>
+    </div>
+
+    <!-- PROJECTS LIST -->
+    <div class="detail-list">
+
+        <!-- Hackmate -->
+        <article class="detail-card reveal" data-categories="ai fullstack production">
+            <div class="detail-top">
+                <div class="detail-visual bg-gradient-1">
+                    <i class="fas fa-users big-icon"></i>
+                    <h3>Hackmate</h3>
+                    <p>AI-Powered Team Finder</p>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-badge"><span class="status-pulse"></span> Production</div>
+                    <h2 class="detail-title">Hackmate — AI Team Finder</h2>
+                    <p class="detail-desc">A full-stack platform that revolutionizes how hackathon participants find teammates. Using AI matching algorithms, it connects developers, designers, and entrepreneurs based on skills, experience, and project interests.</p>
+                    <div class="detail-tech">
+                        <span>JavaScript</span><span>MongoDB</span><span>Node.js</span><span>HTML/CSS</span><span>AI Integration</span>
+                    </div>
+                    <div class="detail-links">
+                        <a href="https://github.com/adityacs50-lab/Hackmate" target="_blank" rel="noopener noreferrer" class="detail-link"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://hackmate.yoursite.com" target="_blank" rel="noopener noreferrer" class="detail-link detail-link-primary"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-bottom">
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-star"></i> Key Features</h3>
+                    <ul class="features-ul">
+                        <li><i class="fas fa-check"></i> AI-powered skill matching across 150+ categories</li>
+                        <li><i class="fas fa-check"></i> Real-time in-app DM chat system</li>
+                        <li><i class="fas fa-check"></i> User profile management with skill tags</li>
+                        <li><i class="fas fa-check"></i> MongoDB persistent data storage</li>
+                        <li><i class="fas fa-check"></i> Responsive design for all devices</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-chart-line"></i> Impact</h3>
+                    <p class="impact-box"><i class="fas fa-rocket"></i> Supports 1000+ concurrent users with instant messaging and real-time notifications. Built to handle high-traffic hackathon events.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- AI Study Assistant -->
+        <article class="detail-card reveal" data-categories="ai fullstack production">
+            <div class="detail-top">
+                <div class="detail-visual bg-gradient-2">
+                    <i class="fas fa-robot big-icon"></i>
+                    <h3>AI Study Assistant</h3>
+                    <p>Claude-Powered Learning</p>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-badge"><span class="status-pulse"></span> Production</div>
+                    <h2 class="detail-title">AI Study Assistant</h2>
+                    <p class="detail-desc">An intelligent study companion powered by Claude AI that helps students learn effectively. Upload study materials, ask questions, and get personalized explanations with persistent chat history.</p>
+                    <div class="detail-tech">
+                        <span>TypeScript</span><span>React</span><span>Claude API</span><span>Tailwind CSS</span><span>Vite</span>
+                    </div>
+                    <div class="detail-links">
+                        <a href="https://github.com/adityacs50-lab/Ai-study-assistant-" target="_blank" rel="noopener noreferrer" class="detail-link"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://ai-study.yoursite.com" target="_blank" rel="noopener noreferrer" class="detail-link detail-link-primary"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-bottom">
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-star"></i> Key Features</h3>
+                    <ul class="features-ul">
+                        <li><i class="fas fa-check"></i> ChatGPT-style UI with sidebar navigation</li>
+                        <li><i class="fas fa-check"></i> PDF document upload (up to 100MB)</li>
+                        <li><i class="fas fa-check"></i> Real-time streaming AI responses</li>
+                        <li><i class="fas fa-check"></i> Persistent memory across sessions</li>
+                        <li><i class="fas fa-check"></i> Mobile-responsive interface</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-chart-line"></i> Impact</h3>
+                    <p class="impact-box"><i class="fas fa-rocket"></i> 1000+ students using for exam prep with 4.8/5 satisfaction rating. Proven to improve study efficiency through AI-assisted learning.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Levaluplife -->
+        <article class="detail-card reveal" data-categories="fullstack production">
+            <div class="detail-top">
+                <div class="detail-visual bg-gradient-3">
+                    <i class="fas fa-level-up-alt big-icon"></i>
+                    <h3>Levaluplife</h3>
+                    <p>TypeScript Full-Stack App</p>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-badge"><span class="status-pulse"></span> Production</div>
+                    <h2 class="detail-title">Levaluplife</h2>
+                    <p class="detail-desc">A modern TypeScript application demonstrating professional full-stack development practices. Built with React, Supabase backend, and deployed on Vercel with automatic CI/CD pipeline.</p>
+                    <div class="detail-tech">
+                        <span>TypeScript</span><span>React</span><span>Supabase</span><span>PostgreSQL</span><span>Tailwind CSS</span><span>Vite</span>
+                    </div>
+                    <div class="detail-links">
+                        <a href="https://github.com/adityacs50-lab/Levaluplife" target="_blank" rel="noopener noreferrer" class="detail-link"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://levaluplife.vercel.app" target="_blank" rel="noopener noreferrer" class="detail-link detail-link-primary"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-bottom">
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-star"></i> Key Features</h3>
+                    <ul class="features-ul">
+                        <li><i class="fas fa-check"></i> TypeScript for type-safe development</li>
+                        <li><i class="fas fa-check"></i> Supabase PostgreSQL integration</li>
+                        <li><i class="fas fa-check"></i> Real-time database sync</li>
+                        <li><i class="fas fa-check"></i> Vercel auto-deployment pipeline</li>
+                        <li><i class="fas fa-check"></i> Production-grade architecture</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="detail-section-title"><i class="fas fa-chart-line"></i> Impact</h3>
+                    <p class="impact-box"><i class="fas fa-rocket"></i> Demonstrates enterprise-level full-stack development practices with modern DevOps workflows and automated deployment pipelines.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-left"><p>&copy; 2026 Aditya Shinde</p></div>
+                <div class="footer-social">
+                    <a href="https://github.com/adityacs50-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aditya-shinde-307264355/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:educomedyhq23@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="footer-right"><p>Built with passion</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Gold dots
+        const gc = document.getElementById('goldDots');
+        if (gc) {
+            for (let i = 0; i < 20; i++) {
+                const d = document.createElement('div');
+                d.className = 'gold-dot-particle';
+                d.style.left = Math.random()*100+'%';
+                d.style.top = Math.random()*100+'%';
+                d.style.width = (2+Math.random()*4)+'px';
+                d.style.height = d.style.width;
+                d.style.animationDelay = Math.random()*6+'s';
+                d.style.animationDuration = (3+Math.random()*4)+'s';
+                gc.appendChild(d);
+            }
+        }
+
+        // Navbar
+        const nb = document.getElementById('navbar');
+        const nt = document.getElementById('navToggle');
+        const mm = document.getElementById('mobileMenu');
+        const bt = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            nb.classList.toggle('scrolled', window.scrollY > 50);
+            bt.classList.toggle('visible', window.scrollY > 500);
+        }, { passive: true });
+
+        nt.addEventListener('click', () => {
+            nt.classList.toggle('active');
+            mm.classList.toggle('open');
+        });
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+            nt.classList.remove('active');
+            mm.classList.remove('open');
+        }));
+
+        bt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Reveal
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Filter
+        const btns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.detail-card');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                cards.forEach(c => {
+                    const cats = c.dataset.categories || '';
+                    if (f === 'all' || cats.includes(f)) {
+                        c.style.display = '';
+                        c.style.opacity = '0';
+                        c.style.transform = 'translateY(20px)';
+                        requestAnimationFrame(() => {
+                            c.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            c.style.opacity = '1';
+                            c.style.transform = 'translateY(0)';
+                        });
+                    } else {
+                        c.style.opacity = '0';
+                        c.style.transform = 'translateY(20px)';
+                        setTimeout(() => c.style.display = 'none', 400);
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { nt.classList.remove('active'); mm.classList.remove('open'); }
+        });
+    });
+    </script>
+</body>
+</html>

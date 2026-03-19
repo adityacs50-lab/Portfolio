@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Shinde — Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Aditya Shinde — Full-Stack Developer & AI Integration Engineer. Building production-ready applications.">
+    <meta name="author" content="Aditya Shinde">
+    <meta property="og:title" content="Aditya Shinde — Full-Stack Developer">
+    <meta property="og:description" content="Production-ready projects with modern tech stack">
+
+    <!-- Fonts: Playfair Display (serif display) + Inter (sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Scattered Gold Dots (decorative) -->
+    <div class="gold-dots" aria-hidden="true" id="goldDots"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">AS<span class="logo-dot">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" data-index="01">Home</a>
+                <a href="#work" class="nav-link" data-index="02">Work</a>
+                <a href="#skills" class="nav-link" data-index="03">Skills</a>
+                <a href="#about" class="nav-link" data-index="04">About</a>
+                <a href="#contact" class="nav-link" data-index="05">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#work" class="mobile-link">Work</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="home" class="hero">
+        <!-- Mountain silhouette background -->
+        <div class="hero-mountains" aria-hidden="true">
+            <svg viewBox="0 0 1440 400" preserveAspectRatio="none" fill="none">
+                <path d="M0 400L0 280C120 200 240 160 360 180C480 200 520 300 640 260C760 220 800 140 960 160C1120 180 1200 280 1320 240C1380 220 1420 260 1440 280L1440 400Z" fill="#0d0d0d"/>
+                <path d="M0 400L0 320C180 260 300 220 480 280C600 320 720 240 900 260C1020 275 1140 320 1260 290C1360 268 1400 300 1440 320L1440 400Z" fill="#0a0a0a"/>
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <!-- Top label -->
+            <div class="hero-label reveal">
+                <span class="label-line"></span>
+                <span class="label-text">Portfolio — 2024</span>
+            </div>
+
+            <!-- Big Title -->
+            <h1 class="hero-title reveal">
+                <span class="title-line">Full-stack</span>
+                <span class="title-line title-line-indent">Developer<span class="title-dot gold-accent">.</span></span>
+            </h1>
+
+            <!-- Hero description -->
+            <div class="hero-bottom reveal">
+                <div class="hero-desc">
+                    <p>Building production-ready applications with AI integration, modern frameworks, and scalable architecture. Specialized in React, TypeScript, Node.js & Claude AI.</p>
+                </div>
+                <div class="hero-scroll">
+                    <div class="scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative dots cluster -->
+        <div class="dots-cluster dots-hero-tl" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="dots-cluster dots-hero-br" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- ========== INTRO / ABOUT PREVIEW ========== -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid reveal">
+                <div class="intro-photo">
+                    <div class="photo-frame">
+                        <div class="photo-placeholder">
+                            <span class="monogram">AS</span>
+                            <div class="photo-overlay"></div>
+                        </div>
+                        <div class="frame-corner frame-tl"></div>
+                        <div class="frame-corner frame-br"></div>
+                    </div>
+                </div>
+                <div class="intro-text">
+                    <span class="section-number">01</span>
+                    <h2 class="intro-heading">Aditya<br><em>Shinde</em></h2>
+                    <p class="intro-bio">I'm a full-stack developer passionate about building production-ready applications. With expertise in AI integration, React, TypeScript, and Node.js — I create scalable systems that solve real problems.</p>
+                    <div class="intro-stats">
+                        <div class="mini-stat">
+                            <span class="mini-stat-num" data-count="3">0</span>
+                            <span class="mini-stat-label">Production Apps</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-num" data-count="10">0</span><span class="plus">+</span>
+                            <span class="mini-stat-label">Projects Built</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-num" data-count="15">0</span><span class="plus">+</span>
+                            <span class="mini-stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TYPOGRAPHY SHOWCASE (decorative) ========== -->
+    <section class="typo-section">
+        <div class="container">
+            <div class="typo-display reveal">
+                <span class="typo-label">Typography</span>
+                <div class="typo-big">
+                    <span class="typo-serif">Playfair Display</span>
+                </div>
+                <div class="typo-specimen">
+                    <span>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm</span>
+                    <span>Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</span>
+                </div>
+                <div class="typo-weights">
+                    <span class="tw-light">Light — Inter</span>
+                    <span class="tw-regular">Regular — Inter</span>
+                    <span class="tw-medium">Medium — Inter</span>
+                    <span class="tw-bold">Bold — Inter</span>
+                </div>
+            </div>
+        </div>
+        <!-- Dots -->
+        <div class="dots-cluster dots-typo" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- ========== COLOR PALETTE ========== -->
+    <section class="palette-section">
+        <div class="container">
+            <div class="palette-grid reveal">
+                <span class="section-number">Color System</span>
+                <div class="palette-colors">
+                    <div class="palette-swatch swatch-black">
+                        <span class="swatch-label">#0A0A0A</span>
+                        <span class="swatch-name">Deep Black</span>
+                    </div>
+                    <div class="palette-swatch swatch-dark">
+                        <span class="swatch-label">#141414</span>
+                        <span class="swatch-name">Card Dark</span>
+                    </div>
+                    <div class="palette-swatch swatch-gray">
+                        <span class="swatch-label">#888888</span>
+                        <span class="swatch-name">Muted</span>
+                    </div>
+                    <div class="palette-swatch swatch-white">
+                        <span class="swatch-label">#FFFFFF</span>
+                        <span class="swatch-name">Pure White</span>
+                    </div>
+                    <div class="palette-swatch swatch-gold">
+                        <span class="swatch-label">#C9A84C</span>
+                        <span class="swatch-name">Gold Accent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS / WORK ========== -->
+    <section id="work" class="work-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Selected<br><em>Projects</em></h2>
+                <p class="section-desc">Production-ready applications built with modern technologies</p>
+            </div>
+
+            <!-- Project 1: Hackmate -->
+            <article class="project-showcase reveal">
+                <div class="browser-mockup">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">hackmate.yoursite.com</div>
+                    </div>
+                    <div class="browser-screen project-screen-1">
+                        <div class="screen-content">
+                            <i class="fas fa-users screen-icon"></i>
+                            <h3>Hackmate</h3>
+                            <p>AI-Powered Team Finder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2024</span>
+                        <span class="project-status-badge">
+                            <span class="status-pulse"></span> Production
+                        </span>
+                    </div>
+                    <h3 class="project-name">Hackmate — AI Team Finder</h3>
+                    <p class="project-desc">AI-powered hackathon team matching platform with real-time messaging. Connects developers, designers, and entrepreneurs based on skills, experience, and project interests using advanced matching algorithms.</p>
+                    <div class="project-features-list">
+                        <span><i class="fas fa-check-circle"></i> AI matching (150+ categories)</span>
+                        <span><i class="fas fa-check-circle"></i> Real-time DM chat</span>
+                        <span><i class="fas fa-check-circle"></i> MongoDB storage</span>
+                        <span><i class="fas fa-check-circle"></i> 1000+ concurrent users</span>
+                    </div>
+                    <div class="project-tech-row">
+                        <span>JavaScript</span>
+                        <span>MongoDB</span>
+                        <span>Node.js</span>
+                        <span>AI Integration</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/adityacs50-lab/Hackmate" target="_blank" rel="noopener noreferrer" class="action-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="https://hackmate.yoursite.com" target="_blank" rel="noopener noreferrer" class="action-link action-primary">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Divider -->
+            <div class="project-divider">
+                <div class="dots-cluster dots-divider" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <!-- Project 2: AI Study Assistant -->
+            <article class="project-showcase project-reverse reveal">
+                <div class="browser-mockup">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">ai-study.yoursite.com</div>
+                    </div>
+                    <div class="browser-screen project-screen-2">
+                        <div class="screen-content">
+                            <i class="fas fa-robot screen-icon"></i>
+                            <h3>AI Study</h3>
+                            <p>Claude-Powered Assistant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2024</span>
+                        <span class="project-status-badge">
+                            <span class="status-pulse"></span> Production
+                        </span>
+                    </div>
+                    <h3 class="project-name">AI Study Assistant</h3>
+                    <p class="project-desc">Intelligent study companion powered by Claude AI. Upload study materials, ask questions, and get personalized explanations with persistent chat history and streaming responses.</p>
+                    <div class="project-features-list">
+                        <span><i class="fas fa-check-circle"></i> ChatGPT-style UI</span>
+                        <span><i class="fas fa-check-circle"></i> PDF upload (100MB)</span>
+                        <span><i class="fas fa-check-circle"></i> Streaming responses</span>
+                        <span><i class="fas fa-check-circle"></i> 4.8/5 rating</span>
+                    </div>
+                    <div class="project-tech-row">
+                        <span>TypeScript</span>
+                        <span>React</span>
+                        <span>Claude API</span>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/adityacs50-lab/Ai-study-assistant-" target="_blank" rel="noopener noreferrer" class="action-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="https://ai-study.yoursite.com" target="_blank" rel="noopener noreferrer" class="action-link action-primary">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Divider -->
+            <div class="project-divider">
+                <div class="dots-cluster dots-divider" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <!-- Project 3: Levaluplife -->
+            <article class="project-showcase reveal">
+                <div class="browser-mockup">
+                    <div class="browser-bar">
+                        <div class="browser-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-url">levaluplife.vercel.app</div>
+                    </div>
+                    <div class="browser-screen project-screen-3">
+                        <div class="screen-content">
+                            <i class="fas fa-level-up-alt screen-icon"></i>
+                            <h3>Levaluplife</h3>
+                            <p>TypeScript Full-Stack App</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2024</span>
+                        <span class="project-status-badge">
+                            <span class="status-pulse"></span> Production
+                        </span>
+                    </div>
+                    <h3 class="project-name">Levaluplife</h3>
+                    <p class="project-desc">Modern TypeScript application demonstrating professional full-stack development. Built with React, Supabase backend, and deployed on Vercel with automatic CI/CD pipeline.</p>
+                    <div class="project-features-list">
+                        <span><i class="fas fa-check-circle"></i> Type-safe TypeScript</span>
+                        <span><i class="fas fa-check-circle"></i> Supabase PostgreSQL</span>
+                        <span><i class="fas fa-check-circle"></i> Real-time sync</span>
+                        <span><i class="fas fa-check-circle"></i> Auto CI/CD pipeline</span>
+                    </div>
+                    <div class="project-tech-row">
+                        <span>TypeScript</span>
+                        <span>React</span>
+                        <span>Supabase</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/adityacs50-lab/Levaluplife" target="_blank" rel="noopener noreferrer" class="action-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="https://levaluplife.vercel.app" target="_blank" rel="noopener noreferrer" class="action-link action-primary">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS — ORBITAL DIAGRAM ========== -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Tech<br><em>Stack</em></h2>
+            </div>
+
+            <div class="orbital-wrapper reveal">
+                <div class="orbital-diagram" id="orbitalDiagram">
+                    <!-- Center -->
+                    <div class="orbital-center">
+                        <span>AS</span>
+                    </div>
+                    <!-- Orbit rings -->
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <!-- Tech nodes will be placed via CSS -->
+                    <div class="tech-node node-react" style="--angle: 0deg; --orbit: 1;"><span>React</span></div>
+                    <div class="tech-node node-ts" style="--angle: 60deg; --orbit: 1;"><span>TypeScript</span></div>
+                    <div class="tech-node node-js" style="--angle: 120deg; --orbit: 1;"><span>JavaScript</span></div>
+                    <div class="tech-node node-node" style="--angle: 180deg; --orbit: 1;"><span>Node.js</span></div>
+                    <div class="tech-node node-tailwind" style="--angle: 240deg; --orbit: 1;"><span>Tailwind</span></div>
+                    <div class="tech-node node-next" style="--angle: 300deg; --orbit: 1;"><span>Next.js</span></div>
+
+                    <div class="tech-node node-mongo" style="--angle: 30deg; --orbit: 2;"><span>MongoDB</span></div>
+                    <div class="tech-node node-pg" style="--angle: 100deg; --orbit: 2;"><span>PostgreSQL</span></div>
+                    <div class="tech-node node-supa" style="--angle: 170deg; --orbit: 2;"><span>Supabase</span></div>
+                    <div class="tech-node node-express" style="--angle: 240deg; --orbit: 2;"><span>Express</span></div>
+                    <div class="tech-node node-claude" style="--angle: 310deg; --orbit: 2;"><span>Claude AI</span></div>
+
+                    <div class="tech-node node-git" style="--angle: 45deg; --orbit: 3;"><span>Git</span></div>
+                    <div class="tech-node node-vercel" style="--angle: 135deg; --orbit: 3;"><span>Vercel</span></div>
+                    <div class="tech-node node-docker" style="--angle: 225deg; --orbit: 3;"><span>Docker</span></div>
+                    <div class="tech-node node-vite" style="--angle: 315deg; --orbit: 3;"><span>Vite</span></div>
+                </div>
+            </div>
+
+            <!-- Skills List (fallback / detail) -->
+            <div class="skills-list-grid reveal">
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Frontend <span class="proficiency-tag tag-expert">Expert</span></h3>
+                    <div class="skill-pills">
+                        <span>React</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind CSS</span><span>HTML5</span><span>CSS3</span><span>Vite</span><span>Next.js</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Backend <span class="proficiency-tag tag-advanced">Advanced</span></h3>
+                    <div class="skill-pills">
+                        <span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span><span>REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">AI / ML <span class="proficiency-tag tag-advanced">Advanced</span></h3>
+                    <div class="skill-pills">
+                        <span>Claude API</span><span>Google Gemini</span><span>LLM Integration</span><span>Prompt Engineering</span><span>AI Agents</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3 class="skill-group-title">DevOps <span class="proficiency-tag tag-inter">Intermediate</span></h3>
+                    <div class="skill-pills">
+                        <span>Vercel</span><span>GitHub Actions</span><span>Docker</span><span>CI/CD</span><span>Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT / EXPERIENCE ========== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">About &<br><em>Experience</em></h2>
+            </div>
+
+            <div class="experience-cards reveal">
+                <div class="exp-card">
+                    <div class="exp-card-top">
+                        <span class="exp-icon"><i class="fas fa-code"></i></span>
+                        <span class="exp-period">2024 — Present</span>
+                    </div>
+                    <h3 class="exp-title">Independent Developer</h3>
+                    <p class="exp-company">Project Builder</p>
+                    <p class="exp-desc">Developed 10+ full-stack projects including AI-powered applications. Focused on building production-ready applications with modern tech stack. Shipped 3 production apps used by real users.</p>
+                    <div class="exp-tags">
+                        <span>Full-Stack Development</span>
+                        <span>AI Integration</span>
+                        <span>Project Management</span>
+                        <span>Technical Writing</span>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-card-top">
+                        <span class="exp-icon"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="exp-period">2023 — 2024</span>
+                    </div>
+                    <h3 class="exp-title">Student Developer</h3>
+                    <p class="exp-company">Self-Taught</p>
+                    <p class="exp-desc">Completed comprehensive full-stack development journey, mastering frontend, backend, and DevOps practices. Built foundational skills through hands-on projects and continuous learning.</p>
+                    <div class="exp-tags">
+                        <span>Problem Solving</span>
+                        <span>Self-Learning</span>
+                        <span>Code Quality</span>
+                        <span>Debugging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-inner reveal">
+                <div class="contact-left">
+                    <span class="section-number">05</span>
+                    <h2 class="contact-title">Let's work<br><em>together</em><span class="title-dot gold-accent">.</span></h2>
+                    <p class="contact-desc">I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out.</p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:educomedyhq23@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="method-label">Email</span>
+                                <span class="method-value">educomedyhq23@gmail.com</span>
+                            </div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                        <a href="https://github.com/adityacs50-lab" target="_blank" rel="noopener noreferrer" class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <span class="method-label">GitHub</span>
+                                <span class="method-value">adityacs50-lab</span>
+                            </div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aditya-shinde-307264355/" target="_blank" rel="noopener noreferrer" class="contact-method">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div>
+                                <span class="method-label">LinkedIn</span>
+                                <span class="method-value">Aditya Shinde</span>
+                            </div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-field">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            Send Message <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="dots-cluster dots-contact" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-big-text">
+                    <span class="reveal">Thank you</span>
+                    <span class="reveal footer-indent"><em>for visiting</em><span class="title-dot gold-accent">.</span></span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <p>&copy; 2026 Aditya Shinde</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/adityacs50-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aditya-shinde-307264355/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:educomedyhq23@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="footer-right">
+                    <p>Built with passion</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer dots -->
+        <div class="dots-cluster dots-footer-l" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="dots-cluster dots-footer-r" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
