@@ -735,6 +735,7 @@ button { font-family: var(--font-sans); }
 .project-screen-1 { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
 .project-screen-2 { background: linear-gradient(135deg, #0c1821, #1b2838, #162447); }
 .project-screen-3 { background: linear-gradient(135deg, #1a0a2e, #2d1b69, #11001c); }
+.project-screen-4 { background: linear-gradient(135deg, #0f172a, #1e293b, #334155); }
 
 .screen-content {
     text-align: center;
