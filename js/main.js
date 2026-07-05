@@ -14,7 +14,11 @@
   /* ── smooth scroll (Lenis) ─────────────────────────────────── */
   var lenis = null;
   if (!reduced && typeof window.Lenis !== 'undefined') {
-    lenis = new window.Lenis({ lerp: 0.11 });
+    lenis = new window.Lenis({
+      lerp: 0.2,            // tighter follow — responsive, still silky
+      wheelMultiplier: 1.35, // more travel per wheel tick
+      touchMultiplier: 1.6
+    });
 
     if (hasGsap && window.ScrollTrigger) {
       window.gsap.registerPlugin(window.ScrollTrigger);
