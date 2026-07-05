@@ -1,143 +1,114 @@
 /* ═══════════════════════════════════════════════════════════════
-   THE BUILDER'S CODEX — motion
-   One orchestrated moment (the illuminated opener), then quiet.
-   GSAP + ScrollTrigger + Lenis, all optional; the page is fully
-   readable with none of them and under prefers-reduced-motion.
+   ADITYA SHINDE® — motion
+   Preloader count-up → staggered hero reveal → quiet scroll reveals.
+   GSAP + Lenis optional; the page is fully readable without them
+   and under prefers-reduced-motion (inline 4s fallback clears the
+   preloader even if everything else fails).
    ═══════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
+  var html = document.documentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasGsap = typeof window.gsap !== 'undefined';
 
-  /* ── smooth scroll (Lenis) ─────────────────────────────────── */
+  /* ── smooth scroll ─────────────────────────────────────────── */
   var lenis = null;
   if (!reduced && typeof window.Lenis !== 'undefined') {
-    lenis = new window.Lenis({ lerp: 0.11 });
-
+    lenis = new window.Lenis({ lerp: 0.2, wheelMultiplier: 1.35, touchMultiplier: 1.6 });
     if (hasGsap && window.ScrollTrigger) {
       window.gsap.registerPlugin(window.ScrollTrigger);
       lenis.on('scroll', window.ScrollTrigger.update);
-      window.gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      window.gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
       window.gsap.ticker.lagSmoothing(0);
     } else {
-      var raf = function (time) { lenis.raf(time); requestAnimationFrame(raf); };
+      var raf = function (t) { lenis.raf(t); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);
     }
   } else if (hasGsap && window.ScrollTrigger) {
     window.gsap.registerPlugin(window.ScrollTrigger);
   }
 
-  /* anchor navigation through Lenis, offset for the masthead */
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="#"]');
     if (!link) return;
     var target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    if (lenis) {
-      lenis.scrollTo(target, { offset: -70 });
-    } else {
-      target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
-    }
+    if (lenis) lenis.scrollTo(target, { offset: -60 });
+    else target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
   });
 
-  if (!hasGsap || reduced) return; // page stays fully visible; nothing to stage
+  /* ── preloader ─────────────────────────────────────────────── */
+  var countEl = document.querySelector('[data-count]');
+
+  function finishLoad() { html.classList.add('loaded'); }
+
+  if (reduced || !hasGsap || !countEl) {
+    finishLoad();
+  } else {
+    var gsap = window.gsap;
+    var n = { v: 0 };
+
+    gsap.set('[data-stagger]', { opacity: 0, y: 40 });
+
+    gsap.timeline()
+      .to(n, {
+        v: 100,
+        duration: 1.4,
+        ease: 'power2.inOut',
+        onUpdate: function () {
+          countEl.textContent = String(Math.round(n.v)).padStart(3, '0');
+        }
+      })
+      .to('.preloader', {
+        opacity: 0,
+        duration: 0.45,
+        ease: 'power1.out',
+        onComplete: finishLoad
+      }, '+=0.15')
+      .to('[data-stagger]', {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.09,
+        ease: 'power3.out'
+      }, '-=0.25');
+  }
+
+  if (!hasGsap || reduced) return;
 
   var gsap = window.gsap;
 
-  /* ── the illuminated opener ────────────────────────────────── */
-  function preparePath(path) {
-    var len = path.getTotalLength();
-    path.style.strokeDasharray = len;
-    path.style.strokeDashoffset = len;
-    return len;
-  }
+  /* ── custom cursor ─────────────────────────────────────────── */
+  if (window.matchMedia('(pointer: fine)').matches) {
+    var dotX = gsap.quickTo('.cursor', 'x', { duration: 0.12, ease: 'power2.out' });
+    var dotY = gsap.quickTo('.cursor', 'y', { duration: 0.12, ease: 'power2.out' });
+    var ringX = gsap.quickTo('.cursor-ring', 'x', { duration: 0.45, ease: 'power3.out' });
+    var ringY = gsap.quickTo('.cursor-ring', 'y', { duration: 0.45, ease: 'power3.out' });
+    gsap.set(['.cursor', '.cursor-ring'], { xPercent: -50, yPercent: -50 });
+    window.addEventListener('pointermove', function (e) {
+      html.classList.add('cursor-on'); // appears only once the pointer is real
+      dotX(e.clientX); dotY(e.clientY);
+      ringX(e.clientX); ringY(e.clientY);
+    }, { passive: true });
 
-  function runHero() {
-    var frames = gsap.utils.toArray('.illum-frame, .illum-flourish path');
-    frames.forEach(preparePath);
-
-    var letter = document.querySelector('.illum-letter');
-    var sheenText = document.querySelector('.illum-letter-sheen');
-    var sheenGrad = document.getElementById('sheen');
-
-    // stage initial states (JS only, so no-JS visitors see everything)
-    gsap.set('.illum-contours', { opacity: 0 });
-    gsap.set('.illum-diamond path', { scale: 0, transformOrigin: '50% 50%' });
-    gsap.set(letter, {
-      fillOpacity: 0,
-      strokeDasharray: 2600,
-      strokeDashoffset: 2600
+    document.addEventListener('mouseover', function (e) {
+      var interactive = e.target.closest('a, button, .work-row, .archive-row');
+      gsap.to('.cursor-ring', { scale: interactive ? 1.8 : 1, duration: 0.3 });
     });
-    gsap.set(sheenText, { opacity: 0 });
-    gsap.set('.hero-fade', { opacity: 0, y: 22 });
-
-    var tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-    tl.to('.illum-frame', { strokeDashoffset: 0, duration: 1.1, stagger: 0.15, ease: 'power1.inOut' })
-      .to('.illum-flourish path', { strokeDashoffset: 0, duration: 0.6, stagger: 0.08 }, '-=0.55')
-      .to('.illum-contours', { opacity: 1, duration: 1.2 }, '-=0.5')
-      .to('.illum-diamond path', { scale: 1, duration: 0.4, ease: 'back.out(2.5)', stagger: 0.1 }, '-=0.8')
-      // ink-in: the initial draws itself…
-      .to(letter, { strokeDashoffset: 0, duration: 1.5, ease: 'power1.inOut' }, '-=0.7')
-      // …then takes the gold leaf
-      .to(letter, { fillOpacity: 1, duration: 1.0, ease: 'power2.inOut' }, '-=0.35')
-      // one pass of candlelight across the gilding
-      .to(sheenText, { opacity: 1, duration: 0.01 })
-      .fromTo(sheenGrad,
-        { attr: { x1: -320, x2: -80 } },
-        { attr: { x1: 380, x2: 620 }, duration: 1.1, ease: 'power2.inOut' })
-      .to(sheenText, { opacity: 0, duration: 0.4 }, '-=0.2')
-      // the rest of the page introduces itself quietly
-      .to('.hero-fade', { opacity: 1, y: 0, duration: 0.85, stagger: 0.12 }, '-=1.2');
   }
 
-  // wait for Fraunces so the initial draws in its true face (2s safety net)
-  var fontsReady = (document.fonts && document.fonts.ready)
-    ? document.fonts.ready
-    : Promise.resolve();
-  Promise.race([
-    fontsReady,
-    new Promise(function (res) { setTimeout(res, 2000); })
-  ]).then(runHero);
-
-  /* ── quiet scroll reveals ──────────────────────────────────── */
+  /* ── scroll reveals ────────────────────────────────────────── */
   if (window.ScrollTrigger) {
     gsap.utils.toArray('[data-reveal]').forEach(function (el) {
       gsap.from(el, {
         opacity: 0,
-        y: 30,
-        duration: 0.95,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 86%' }
-      });
-    });
-
-    /* marginalia drift in from the margin, like a note being added */
-    gsap.utils.toArray('[data-margin]').forEach(function (el) {
-      gsap.from(el, {
-        opacity: 0,
-        x: 14,
-        duration: 1.1,
-        delay: 0.25,
-        ease: 'power2.out',
+        y: 36,
+        duration: 0.9,
+        ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 88%' }
-      });
-    });
-
-    /* gentle parallax on the hero contour etching */
-    gsap.utils.toArray('.contour-parallax').forEach(function (el) {
-      gsap.to(el, {
-        yPercent: 14,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: el.closest('section') || el,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
       });
     });
   }

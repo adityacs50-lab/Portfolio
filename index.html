@@ -3,555 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aditya Shinde — The Builder's Codex</title>
-  <meta name="description" content="Aditya Shinde — AI builder since 14. Building autonomy where GPS can't reach. A catalogued codex of startups, commissions, and foundational builds.">
+  <title>Aditya Shinde® — AI Builder</title>
+  <meta name="description" content="Aditya Shinde — AI builder since 14. Deterministic guardrails for AI agents, autonomy for GPS-denied environments, and a shipped archive of AI systems.">
   <meta name="author" content="Aditya Shinde">
-  <meta property="og:title" content="Aditya Shinde — The Builder's Codex">
-  <meta property="og:description" content="AI builder since 14. Building autonomy where GPS can't reach.">
+  <meta property="og:title" content="Aditya Shinde® — AI Builder">
+  <meta property="og:description" content="AI builder since 14. Autonomy where GPS can't reach.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230C0B09'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' fill='%23C9A227' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B0C0A'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-weight='900' font-size='38' fill='%23BFFF38' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- enables the preloader only when JS runs; 4s hard fallback so nothing can trap the page -->
+  <script>document.documentElement.className += ' js';
+    setTimeout(function () { document.documentElement.className += ' loaded'; }, 4000);</script>
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ══ Ambient contour etching (fixed, faint) ══ -->
-  <div class="etching" aria-hidden="true"></div>
+  <!-- ── preloader ── -->
+  <div class="preloader" aria-hidden="true">
+    <span class="preloader-count mono" data-count>000</span>
+    <span class="preloader-label mono">initializing autonomy</span>
+  </div>
 
-  <header class="masthead">
-    <a class="masthead-mark" href="#top" aria-label="Back to top — Aditya Shinde">
-      <span class="mark-initial" aria-hidden="true">A·S</span>
-      <span class="mark-title">The Builder's Codex</span>
-    </a>
-    <nav class="masthead-nav mono" aria-label="Codex contents">
-      <a href="#preface">Preface</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#commissions">Commissions</a>
-      <a href="#catalog">Catalog</a>
-      <a href="#appendix">Appendix</a>
-      <a href="#correspondence">Write</a>
+  <!-- ── custom cursor (fine pointers only) ── -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="topbar-brand mono" href="#top">ADITYA SHINDE<sup>®</sup></a>
+    <p class="topbar-status mono"><span class="status-dot" aria-hidden="true"></span>available for the right room</p>
+    <nav class="topbar-nav mono" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#archive">Archive</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="main">
 
-    <!-- ═══════════ HERO — THE ILLUMINATED OPENER ═══════════ -->
-    <section class="hero" id="top" aria-label="Introduction">
-      <svg class="hero-contours contour-parallax" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g fill="none" stroke="#C9A227" stroke-opacity="0.05">
-          <path d="M600,120 C790,128 900,240 884,392 C868,544 726,626 574,604 C422,582 330,462 352,320 C372,190 470,114 600,120 Z"/>
-          <path d="M600,180 C744,186 828,272 816,388 C804,504 696,566 580,550 C464,534 394,442 410,334 C424,236 500,176 600,180 Z"/>
-          <path d="M600,240 C698,244 754,302 746,380 C738,458 664,500 586,490 C508,480 460,418 470,346 C480,282 532,238 600,240 Z"/>
-        </g>
-        <g fill="none" stroke="#3A4A5A" stroke-opacity="0.09">
-          <path d="M0,700 C160,668 300,724 480,690 C660,656 800,712 980,678 C1100,656 1160,682 1200,672"/>
-          <path d="M0,748 C180,720 320,764 500,736 C680,708 820,756 1000,726 C1110,708 1170,730 1200,722"/>
-          <path d="M0,80 C170,52 310,96 490,66 C670,38 810,84 990,54 C1100,36 1160,60 1200,50"/>
-        </g>
-        <g fill="#3A4A5A" fill-opacity="0.22">
-          <circle cx="140" cy="210" r="1.4"/><circle cx="205" cy="168" r="1.1"/><circle cx="98" cy="300" r="1.2"/>
-          <circle cx="1050" cy="240" r="1.4"/><circle cx="1110" cy="330" r="1.1"/><circle cx="990" cy="170" r="1.2"/>
-          <circle cx="180" cy="560" r="1.3"/><circle cx="1080" cy="540" r="1.3"/><circle cx="920" cy="620" r="1.1"/>
-          <circle cx="260" cy="640" r="1.1"/><circle cx="70" cy="450" r="1.0"/><circle cx="1150" cy="440" r="1.0"/>
-        </g>
-        <g stroke="#3A4A5A" stroke-opacity="0.16">
-          <path d="M120,120 h16 M128,112 v16"/>
-          <path d="M1060,600 h16 M1068,592 v16"/>
-        </g>
-      </svg>
-
-      <p class="hero-kicker mono hero-fade">The Builder's Codex &nbsp;·&nbsp; Vol.&nbsp;I &nbsp;·&nbsp; a catalogue of work</p>
-
-      <h1 class="hero-name" aria-label="Aditya Shinde">
-        <span aria-hidden="true" class="hero-name-visual">
-          <span class="illum-wrap">
-            <svg class="illum" viewBox="0 0 360 420" role="presentation" focusable="false">
-              <defs>
-                <linearGradient id="gild" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#8A6C16"/>
-                  <stop offset="0.35" stop-color="#C9A227"/>
-                  <stop offset="0.62" stop-color="#EAD07E"/>
-                  <stop offset="0.78" stop-color="#C9A227"/>
-                  <stop offset="1" stop-color="#7D611A"/>
-                </linearGradient>
-                <linearGradient id="sheen" gradientUnits="userSpaceOnUse" x1="-260" y1="0" x2="-60" y2="120">
-                  <stop offset="0" stop-color="#FFF6D8" stop-opacity="0"/>
-                  <stop offset="0.5" stop-color="#FFF6D8" stop-opacity="0.85"/>
-                  <stop offset="1" stop-color="#FFF6D8" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-
-              <!-- faint survey contours inside the frame -->
-              <g class="illum-contours" fill="none" stroke="#3A4A5A" stroke-opacity="0.18">
-                <path d="M180,58 C258,62 300,116 294,190 C288,266 232,308 168,300 C104,292 62,238 72,172 C82,112 118,54 180,58 Z"/>
-                <path d="M180,96 C238,100 268,140 264,194 C260,250 218,280 170,274 C122,268 92,228 100,178 C108,132 134,92 180,96 Z"/>
-                <circle cx="182" cy="188" r="2" fill="#3A4A5A" stroke="none" fill-opacity="0.3"/>
-              </g>
-
-              <!-- engraved frame -->
-              <path class="illum-frame" fill="none" stroke="#C9A227" stroke-opacity="0.75" stroke-width="1.4" d="M16,16 H344 V404 H16 Z"/>
-              <path class="illum-frame" fill="none" stroke="#C9A227" stroke-opacity="0.4" stroke-width="1" d="M28,28 H332 V392 H28 Z"/>
-              <!-- corner flourishes -->
-              <g class="illum-flourish" fill="none" stroke="#C9A227" stroke-opacity="0.65" stroke-width="1.2">
-                <path d="M28,64 C28,44 44,28 64,28"/>
-                <path d="M296,28 C316,28 332,44 332,64"/>
-                <path d="M332,356 C332,376 316,392 296,392"/>
-                <path d="M64,392 C44,392 28,376 28,356"/>
-              </g>
-              <!-- midpoint seals -->
-              <g class="illum-diamond" fill="#7A2521">
-                <path d="M180,10 l6,6 -6,6 -6,-6 Z"/>
-                <path d="M180,398 l6,6 -6,6 -6,-6 Z"/>
-              </g>
-
-              <!-- the gilded initial -->
-              <text class="illum-letter" x="180" y="318" text-anchor="middle">A</text>
-              <text class="illum-letter-sheen" x="180" y="318" text-anchor="middle" fill="url(#sheen)">A</text>
-            </svg>
-          </span>
-          <span class="name-rest">
-            <span class="name-line hero-fade">ditya</span>
-            <span class="name-line name-line-2 hero-fade">Shinde</span>
-          </span>
-        </span>
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="top" aria-label="Intro">
+      <p class="hero-eyebrow mono" data-stagger>ai builder — est. age 14 — india</p>
+      <h1 class="hero-title">
+        <span class="line" data-stagger>ADITYA</span>
+        <span class="line line-accent" data-stagger>SHINDE</span>
       </h1>
-
-      <p class="hero-tag hero-fade">AI builder since 14. Building autonomy where GPS can't reach.</p>
-      <p class="hero-meta mono hero-fade">@adityashinde.dev &nbsp;·&nbsp; deep-tech founder &nbsp;·&nbsp; toward ai product management</p>
-
-      <a class="hero-cue mono hero-fade" href="#preface">begin the survey <span aria-hidden="true">↓</span></a>
-    </section>
-
-    <!-- ═══════════ PREFACE / ABOUT ═══════════ -->
-    <section class="folio" id="preface" aria-labelledby="preface-h">
-      <div class="folio-inner">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Preface</p>
-          <h2 id="preface-h">On the maker of these plates</h2>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
-
-        <div class="prose" data-reveal>
-          <p>
-            Self-taught since fourteen. No bootcamp, no pedigree — a search bar, a compiler, and a
-            refusal to accept <em>"that's just how it works"</em> as an answer. Everything in this
-            codex was built the same way: strip the system to its physics, keep only what earns its
-            place, ship it, and let reality grade the work. Six-plus production AI systems shipped
-            solo, now compounding into deep-tech ventures — while reading for a B.Tech in AI&nbsp;&amp;&nbsp;ML.
-          </p>
-          <p>
-            The plates that follow run from deterministic guardrails for AI agents and autonomy
-            software for underground mines, to commissioned storefronts, to the foundational
-            instruments where the method was forged. The line they trace points at AI product
-            management — because past a certain point the hard problem isn't writing the code.
-            It's deciding what deserves to exist.
-          </p>
-        </div>
-
-        <aside class="marginalia" data-margin>
-          <span class="marginalia-mark" aria-hidden="true">✦</span>
-          The compiler doesn't care how old you are.
-        </aside>
-      </div>
-    </section>
-
-    <!-- ═══════════ FOLIO I — VENTURES ═══════════ -->
-    <section class="folio" id="ventures" aria-labelledby="ventures-h">
-      <div class="folio-inner">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Folio I</p>
-          <h2 id="ventures-h">Ventures</h2>
-          <p class="folio-sub">The headline plates — companies built from zero.</p>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
-
-        <!-- ── PL. ISRU-001 ── -->
-        <article class="plate" id="isru" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. ISRU-001</p>
-            <h3 class="plate-title">ISRU AI</h3>
-            <p class="plate-kicker">Autonomy software for GPS-denied extreme environments</p>
-          </header>
-          <figure class="plate-figure" aria-label="Image slot for ISRU AI">
-            <span class="mono">[ image — plate ISRU-001 · simulation capture forthcoming ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              Sensor-fusion SLAM autonomy for underground mining, where satellites can't see and the
-              map goes stale with every blast cycle. ISRU fuses LiDAR, inertial, and odometry streams
-              into a live model of the mine — so heavy machines navigate the dark with the confidence
-              of surveyed ground. Built for places where positioning is not a service you subscribe
-              to, but a problem you solve.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="ISRU AI data">
-            <li>domain — slam · sensor fusion</li>
-            <li>sim success — 93.3%</li>
-            <li>collisions — 0% @ full visibility</li>
-            <li>2025 —</li>
-            <li class="data-status">yc f26 applicant</li>
-          </ul>
-          <aside class="marginalia" data-margin>
-            <span class="marginalia-mark" aria-hidden="true">✦</span>
-            GPS is a luxury. Physics is not.
-          </aside>
-        </article>
-
-        <!-- ── PL. STL-002 ── -->
-        <article class="plate" id="statelock" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. STL-002</p>
-            <h3 class="plate-title">StateLock</h3>
-            <p class="plate-kicker">Deterministic guardrails for autonomous AI agents</p>
-          </header>
-          <figure class="plate-figure" aria-label="Image slot for StateLock">
-            <span class="mono">[ image — plate STL-002 · landing capture on file ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              A policy-enforcement gateway that intercepts an agent's actions <em>before</em>
-              execution — permit, deny, or escalate, decided by deterministic rules instead of
-              probabilistic LLM judgment. In live demo it halted a $500 unauthorized refund at 1.0
-              confidence; the production backend validates 7/7 PASS. Ships as a pip-installable
-              Python SDK with a rule-approval workflow and developer portal, priced for fintech
-              stakes.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="StateLock data">
-            <li>stack — fastapi · next.js · supabase · railway</li>
-            <li>halted $500 rogue refund @ 1.0 confidence</li>
-            <li>2026 —</li>
-            <li class="data-status">founder · private beta</li>
-          </ul>
-          <aside class="marginalia" data-margin>
-            <span class="marginalia-mark" aria-hidden="true">✦</span>
-            A guardrail that's 99% reliable is a suggestion.
-          </aside>
-        </article>
-
-        <!-- ── PL. BTX-003 ── -->
-        <article class="plate" id="batonyx" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. BTX-003</p>
-            <h3 class="plate-title">Batonyx</h3>
-            <p class="plate-kicker">An autonomous agent for the Sales → Customer-Success handoff</p>
-          </header>
-          <figure class="plate-figure" aria-label="Image slot for Batonyx">
-            <span class="mono">[ image — plate BTX-003 · product capture forthcoming ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              B2B SaaS aimed at the exact moment revenue is most often fumbled: the handoff. When a
-              deal closes, Batonyx reads the full record — Gong calls, Slack threads, Gmail — and
-              delivers a <em>Handoff Brief</em>, an <em>Expectation Ledger</em>, and a
-              <em>Day-Zero Pre-Mortem</em> before the kickoff call is even booked. The customer never
-              has to repeat what they already told sales.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="Batonyx data">
-            <li>stack — next.js · groq</li>
-            <li>2026</li>
-            <li class="data-status">in active build</li>
-          </ul>
-          <aside class="marginalia" data-margin>
-            <span class="marginalia-mark" aria-hidden="true">✦</span>
-            Deals don't die at the close. They die in the handoff.
-          </aside>
-        </article>
-
-        <!-- ── PL. NBL-004 ── -->
-        <article class="plate" id="nebula" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. NBL-004</p>
-            <h3 class="plate-title">Nebula OS</h3>
-            <p class="plate-kicker">A shared operating system for founding teams</p>
-          </header>
-          <figure class="plate-figure" aria-label="Image slot for Nebula OS">
-            <span class="mono">[ image — plate NBL-004 · product capture forthcoming ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              One surface where a founding team's context lives, syncs, and thinks. Nebula OS puts
-              decisions, documents, and direction on real-time collaborative rails so a three-person
-              company moves like one organism — the operating system a startup runs on before it can
-              afford an operations team.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="Nebula OS data">
-            <li>stack — next.js 14 · liveblocks · supabase · gemini</li>
-            <li>2025</li>
-            <li class="data-status">working beta</li>
-          </ul>
-          <aside class="marginalia" data-margin>
-            <span class="marginalia-mark" aria-hidden="true">✦</span>
-            Alignment is infrastructure, not a meeting.
-          </aside>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══════════ FOLIO II — COMMISSIONS ═══════════ -->
-    <section class="folio" id="commissions" aria-labelledby="commissions-h">
-      <div class="folio-inner">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Folio II</p>
-          <h2 id="commissions-h">Commissioned Works</h2>
-          <p class="folio-sub">Client builds — other people's constraints, delivered.</p>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
-
-        <article class="plate plate-compact" id="senorita" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. CMS-101</p>
-            <h3 class="plate-title">Señorita Cafe</h3>
-            <p class="plate-kicker">Brand-forward cafe web presence</p>
-          </header>
-          <figure class="plate-figure plate-figure-wide" aria-label="Image slot for Señorita Cafe">
-            <span class="mono">[ image — plate CMS-101 ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              A site built to feel like the cafe's best table — menu, story, and atmosphere carried
-              through an editorial layout that puts the brand's warmth on screen without a single
-              stock template.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="Señorita Cafe data">
-            <li>engagement — client commission</li>
-            <li>2024</li>
-            <li class="data-status">delivered</li>
-          </ul>
-        </article>
-
-        <article class="plate plate-compact" id="womenswear" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. CMS-102</p>
-            <h3 class="plate-title">Women's-Wear Storefront</h3>
-            <p class="plate-kicker">End-to-end e-commerce build</p>
-          </header>
-          <figure class="plate-figure plate-figure-wide" aria-label="Image slot for women's-wear e-commerce build">
-            <span class="mono">[ image — plate CMS-102 ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              A women's-wear e-commerce build carried from catalog to cart to checkout — designed
-              phone-first, because that's where the customers actually are.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="Women's-wear storefront data">
-            <li>engagement — client commission</li>
-            <li>2024</li>
-            <li class="data-status">delivered</li>
-          </ul>
-        </article>
-
-        <article class="plate plate-compact" id="brewco" data-reveal>
-          <header class="plate-head">
-            <p class="plate-no mono">Pl. CMS-103</p>
-            <h3 class="plate-title">Brew &amp; Co.</h3>
-            <p class="plate-kicker">Demo cafe experience — the motion showpiece</p>
-          </header>
-          <figure class="plate-figure plate-figure-wide" aria-label="Image slot for Brew and Co">
-            <span class="mono">[ image — plate CMS-103 ]</span>
-          </figure>
-          <div class="plate-body">
-            <p>
-              A demonstration cafe site built to show what the medium can do: WebGL scene-work,
-              scroll choreography, and buttery inertia — proof that craft in the browser is a
-              deliverable, not a luxury.
-            </p>
-          </div>
-          <ul class="data-strip mono" aria-label="Brew and Co data">
-            <li>stack — three.js · gsap · lenis</li>
-            <li>2025</li>
-            <li class="data-status">live demo</li>
-          </ul>
-          <aside class="marginalia" data-margin>
-            <span class="marginalia-mark" aria-hidden="true">✦</span>
-            Client work is strength training — someone else's constraints, your form.
-          </aside>
-        </article>
-      </div>
-    </section>
-
-    <!-- ═══════════ FOLIO III — FOUNDATIONAL CATALOG ═══════════ -->
-    <section class="folio" id="catalog" aria-labelledby="catalog-h">
-      <div class="folio-inner folio-inner-wide">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Folio III</p>
-          <h2 id="catalog-h">Foundational Catalog</h2>
-          <p class="folio-sub">The specimens — instruments and apparatus where the method was forged.</p>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
-
-        <p class="marginalia marginalia-free" data-margin>
-          <span class="marginalia-mark" aria-hidden="true">✦</span>
-          Every specimen here taught me one thing I couldn't unlearn.
+      <div class="hero-foot">
+        <p class="hero-blurb" data-stagger>
+          Building autonomy where GPS can't reach — deterministic guardrails
+          for AI agents, SLAM for underground mines, and a shipped archive
+          of systems that actually run.
         </p>
-
-        <div class="catalog-grid">
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ CBR-201 <span class="specimen-year">2026</span></p>
-            <figure class="specimen-thumb" aria-label="Image slot for Company Brain">
-              <span class="mono">[ image — CBR-201 ]</span>
-            </figure>
-            <h3 class="specimen-title">Company Brain</h3>
-            <p class="specimen-desc">Scans Gmail, Slack, Notion, and Drive for repeatable workflows and compiles them into approved, source-linked skills AI agents can follow without hallucinating procedure.</p>
-            <p class="specimen-stack mono">next.js · fastapi · groq · supabase <span class="specimen-status">live</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ FRS-202 <span class="specimen-year">2026</span></p>
-            <figure class="specimen-thumb" aria-label="Image slot for FraudShield">
-              <span class="mono">[ image — FRS-202 ]</span>
-            </figure>
-            <h3 class="specimen-title">FraudShield</h3>
-            <p class="specimen-desc">Fraud-detection engine scoring imbalanced transaction data at 0.9673 ROC-AUC, with a live triage deck — alert queue, rules, model health — to cut manual review load.</p>
-            <p class="specimen-stack mono">lightgbm · isolation forest · python <span class="specimen-status">production</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ LMN-203 <span class="specimen-year">2026</span></p>
-            <figure class="specimen-thumb" aria-label="Image slot for Lumina AI">
-              <span class="mono">[ image — LMN-203 ]</span>
-            </figure>
-            <h3 class="specimen-title">Lumina AI</h3>
-            <p class="specimen-desc">Resume-ranking engine that scores candidates against any job description in seconds — unstructured resumes in, ranked relevance out. Evidence, not horoscopes.</p>
-            <p class="specimen-stack mono">tf-idf · cosine similarity · fastapi <span class="specimen-status">live</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ CPM-204 <span class="specimen-year">2026</span></p>
-            <figure class="specimen-thumb" aria-label="Image slot for Cursor for PMs">
-              <span class="mono">[ image — CPM-204 ]</span>
-            </figure>
-            <h3 class="specimen-title">Cursor for PMs</h3>
-            <p class="specimen-desc">Discovery engine that synthesizes raw customer interviews, feedback, and sales-call transcripts into agent-ready feature specs.</p>
-            <p class="specimen-stack mono">gemini 2.5 flash · llm synthesis <span class="specimen-status">working tool</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ FLV-205 <span class="specimen-year">2026</span></p>
-            <figure class="specimen-thumb" aria-label="Image slot for Filovum">
-              <span class="mono">[ image — FLV-205 ]</span>
-            </figure>
-            <h3 class="specimen-title">Filovum / Doxo</h3>
-            <p class="specimen-desc">An AI document vault that reads, names, summarizes, and files whatever you throw at it into smart folders — a librarian for download chaos.</p>
-            <p class="specimen-stack mono">ai classification · document vault <span class="specimen-status">shipped</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ PMT-206 <span class="specimen-year">2026</span></p>
-            <h3 class="specimen-title">AI PM Triage Tool</h3>
-            <p class="specimen-desc">Turns raw user feedback and feature requests into structured prioritization signals — customer pain, urgency, roadmap relevance — faster than a grooming meeting.</p>
-            <p class="specimen-stack mono">react · fastapi · llm apis <span class="specimen-status">live</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ RAG-207 <span class="specimen-year">2025</span></p>
-            <h3 class="specimen-title">RAG Pipeline</h3>
-            <p class="specimen-desc">Retrieval-augmented generation service built from parts — ingestion, chunking, embedding, grounded answers with citations.</p>
-            <p class="specimen-stack mono">fastapi · langchain · chromadb · claude api <span class="specimen-status">shipped</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ HKM-208 <span class="specimen-year">2025</span></p>
-            <h3 class="specimen-title">HackMate</h3>
-            <p class="specimen-desc">Agentic hackathon assistant — matches teammates across 150+ skill categories and keeps the build on schedule through the final hour.</p>
-            <p class="specimen-stack mono">node.js · mongodb · ai matching <span class="specimen-status">production</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ SSI-209 <span class="specimen-year">2024</span></p>
-            <h3 class="specimen-title">StockSense India</h3>
-            <p class="specimen-desc">LLM/NLP finance tool that reads Indian market noise — filings, headlines, sentiment — into plain-language signal.</p>
-            <p class="specimen-stack mono">llm · nlp · market data <span class="specimen-status">prototype</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ RSA-210 <span class="specimen-year">2024</span></p>
-            <h3 class="specimen-title">RoadSentinel AI</h3>
-            <p class="specimen-desc">Real-time road-hazard detection from camera frames — potholes, debris, and danger flagged before the wheel finds them.</p>
-            <p class="specimen-stack mono">yolov8 · computer vision <span class="specimen-status">prototype</span></p>
-          </article>
-
-          <article class="specimen" data-reveal>
-            <p class="specimen-no mono">№ SLV-211 <span class="specimen-year">2025</span></p>
-            <h3 class="specimen-title">Shadow Leveling</h3>
-            <p class="specimen-desc">An AI RPG fitness tracker — training becomes a leveling system with quests, stats, and consequences. Monetized from day one.</p>
-            <p class="specimen-stack mono">ai coaching · stripe <span class="specimen-status">shipped</span></p>
-          </article>
-
-        </div>
+        <p class="hero-scroll mono" data-stagger>scroll<span class="scroll-bar" aria-hidden="true"></span></p>
       </div>
     </section>
 
-    <!-- ═══════════ APPENDIX — CREDENTIALS ═══════════ -->
-    <section class="folio" id="appendix" aria-labelledby="appendix-h">
-      <div class="folio-inner">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Appendix</p>
-          <h2 id="appendix-h">Credentials &amp; Rooms Entered</h2>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
+    <!-- ── ticker ── -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track mono">
+        <span>DETERMINISTIC GUARDRAILS ✕ GPS-DENIED AUTONOMY ✕ AGENT SAFETY ✕ SENSOR FUSION ✕ FIRST PRINCIPLES ✕ SHIPPED, NOT PITCHED ✕&nbsp;</span>
+        <span>DETERMINISTIC GUARDRAILS ✕ GPS-DENIED AUTONOMY ✕ AGENT SAFETY ✕ SENSOR FUSION ✕ FIRST PRINCIPLES ✕ SHIPPED, NOT PITCHED ✕&nbsp;</span>
+      </div>
+    </div>
 
-        <ul class="credentials mono" data-reveal aria-label="Credentials">
-          <li>McKinsey Forward — Selected Fellow, 2026</li>
-          <li>Harvard Aspire Leaders '26</li>
-          <li>Anthropic Claude 101</li>
-          <li>Palantir Foundry &amp; AIP Builder</li>
-          <li>BCG Strategy + GenAI</li>
-          <li>Andrew Ng — Agentic AI</li>
-          <li>Deloitte Cyber</li>
-          <li>JPMorgan Software Engineering</li>
-          <li>E-Cell Ambassador — IIT Madras / Kanpur / Gandhinagar</li>
-        </ul>
+    <!-- ═══════════ SELECTED WORK ═══════════ -->
+    <section class="work" id="work" aria-labelledby="work-h">
+      <header class="section-head">
+        <h2 id="work-h" class="section-title" data-reveal>SELECTED<br>WORK</h2>
+        <p class="section-note mono" data-reveal>ventures — 2025 → present</p>
+      </header>
 
-        <p class="credentials-edu mono" data-reveal>
-          b.tech, artificial intelligence &amp; machine learning — mgm college of engineering &amp; technology, 2025–2029
-        </p>
+      <ul class="work-list">
+        <li class="work-row" data-reveal>
+          <div class="work-row-top">
+            <span class="work-idx mono">01</span>
+            <h3 class="work-name">ISRU AI</h3>
+            <span class="work-tag mono">yc f26 applicant</span>
+          </div>
+          <div class="work-row-body">
+            <p class="work-desc">
+              Sensor-fusion SLAM autonomy software for GPS-denied underground mining
+              environments. LiDAR, inertial and odometry fused into a live model of the
+              mine — 93.3% sim success, 0% collisions at full visibility.
+            </p>
+            <p class="work-meta mono">slam · sensor fusion — 2025 → — [ image: isru capture ]</p>
+          </div>
+        </li>
+
+        <li class="work-row" data-reveal>
+          <div class="work-row-top">
+            <span class="work-idx mono">02</span>
+            <h3 class="work-name">STATELOCK</h3>
+            <span class="work-tag mono">founder · private beta</span>
+          </div>
+          <div class="work-row-body">
+            <p class="work-desc">
+              Deterministic policy-enforcement gateway for AI agents — permit, deny or
+              escalate before execution. Halted a $500 rogue refund at 1.0 confidence;
+              7/7 PASS on the production backend. Python SDK, rule approvals, dev portal.
+            </p>
+            <p class="work-meta mono">fastapi · next.js · supabase · railway — 2026 → — [ image: statelock capture ]</p>
+          </div>
+        </li>
+
+        <li class="work-row" data-reveal>
+          <div class="work-row-top">
+            <span class="work-idx mono">03</span>
+            <h3 class="work-name">BATONYX</h3>
+            <span class="work-tag mono">in active build</span>
+          </div>
+          <div class="work-row-body">
+            <p class="work-desc">
+              Autonomous agent for the Sales → Customer-Success handoff. Reads Gong,
+              Slack and Gmail on deal-close; delivers a Handoff Brief, Expectation
+              Ledger and Day-Zero Pre-Mortem before kickoff is booked.
+            </p>
+            <p class="work-meta mono">next.js · groq — 2026 — [ image: batonyx capture ]</p>
+          </div>
+        </li>
+
+        <li class="work-row" data-reveal>
+          <div class="work-row-top">
+            <span class="work-idx mono">04</span>
+            <h3 class="work-name">NEBULA OS</h3>
+            <span class="work-tag mono">working beta</span>
+          </div>
+          <div class="work-row-body">
+            <p class="work-desc">
+              A shared operating system for founding teams — decisions, documents and
+              direction on real-time collaborative rails, so a three-person company
+              moves like one organism.
+            </p>
+            <p class="work-meta mono">next.js 14 · liveblocks · supabase · gemini — 2025 — [ image: nebula capture ]</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ ARCHIVE ═══════════ -->
+    <section class="archive" id="archive" aria-labelledby="archive-h">
+      <header class="section-head">
+        <h2 id="archive-h" class="section-title" data-reveal>THE<br>ARCHIVE</h2>
+        <p class="section-note mono" data-reveal>shipped systems &amp; commissions — 2024 → 2026</p>
+      </header>
+
+      <ul class="archive-list mono" data-reveal>
+        <li class="archive-row"><span>COMPANY BRAIN</span><span>source-linked agent skills from work apps</span><span>next.js · fastapi · groq · supabase</span><span>2026 — live</span></li>
+        <li class="archive-row"><span>FRAUDSHIELD</span><span>fraud engine — 0.9673 roc-auc</span><span>lightgbm · isolation forest · python</span><span>2026 — production</span></li>
+        <li class="archive-row"><span>LUMINA AI</span><span>resume-vs-jd ranking engine</span><span>tf-idf · cosine sim · fastapi</span><span>2026 — live</span></li>
+        <li class="archive-row"><span>CURSOR FOR PMS</span><span>transcripts → agent-ready feature specs</span><span>gemini 2.5 flash</span><span>2026 — tool</span></li>
+        <li class="archive-row"><span>FILOVUM / DOXO</span><span>ai document vault, smart folders</span><span>ai classification</span><span>2026 — shipped</span></li>
+        <li class="archive-row"><span>AI PM TRIAGE</span><span>feedback → prioritization signals</span><span>react · fastapi · llm apis</span><span>2026 — live</span></li>
+        <li class="archive-row"><span>RAG PIPELINE</span><span>grounded answers with citations</span><span>fastapi · langchain · chromadb · claude</span><span>2025 — shipped</span></li>
+        <li class="archive-row"><span>HACKMATE</span><span>agentic hackathon team-matching</span><span>node.js · mongodb</span><span>2025 — production</span></li>
+        <li class="archive-row"><span>SHADOW LEVELING</span><span>ai rpg fitness tracker</span><span>ai coaching · stripe</span><span>2025 — shipped</span></li>
+        <li class="archive-row"><span>STOCKSENSE INDIA</span><span>llm/nlp market signal</span><span>llm · nlp</span><span>2024 — prototype</span></li>
+        <li class="archive-row"><span>ROADSENTINEL AI</span><span>real-time road-hazard detection</span><span>yolov8</span><span>2024 — prototype</span></li>
+        <li class="archive-row"><span>BREW &amp; CO.</span><span>webgl demo cafe — commission</span><span>three.js · gsap · lenis</span><span>2025 — live demo</span></li>
+        <li class="archive-row"><span>SEÑORITA CAFE</span><span>brand-forward cafe site — commission</span><span>web build</span><span>2024 — delivered</span></li>
+        <li class="archive-row"><span>WOMEN'S-WEAR STORE</span><span>end-to-end e-commerce — commission</span><span>web build</span><span>2024 — delivered</span></li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section class="about" id="about" aria-labelledby="about-h">
+      <header class="section-head">
+        <h2 id="about-h" class="section-title" data-reveal>FIRST<br>PRINCIPLES</h2>
+        <p class="section-note mono" data-reveal>the operator</p>
+      </header>
+      <div class="about-body">
+        <p class="about-line" data-reveal>Self-taught since fourteen — a search bar, a compiler, and a refusal to accept "that's just how it works."</p>
+        <p class="about-line" data-reveal>Six-plus production AI systems shipped solo. Strip the system to its physics, keep what earns its place, let reality grade the work.</p>
+        <p class="about-line" data-reveal>Now: deep-tech ventures + a B.Tech in AI &amp; ML, heading toward AI product management — because past a point, the hard problem is deciding what deserves to exist.</p>
       </div>
     </section>
 
-    <!-- ═══════════ COLOPHON / CORRESPONDENCE ═══════════ -->
-    <footer class="colophon" id="correspondence" aria-labelledby="correspondence-h">
-      <div class="folio-inner">
-        <header class="folio-head" data-reveal>
-          <p class="folio-no mono">Colophon</p>
-          <h2 id="correspondence-h">Correspondence</h2>
-          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
-        </header>
-
-        <p class="colophon-lede" data-reveal>
-          The codex stays open. If you're building something that needs a first-principles hand —
-          or a room that needs one more builder — write.
-        </p>
-
-        <a class="colophon-mail" href="mailto:shindeadityau@gmail.com" data-reveal>shindeadityau@gmail.com</a>
-
-        <ul class="colophon-links mono" data-reveal>
-          <li><a href="https://www.linkedin.com/in/aditya-shinde-ai/" rel="me noopener" target="_blank">linkedin — aditya-shinde-ai</a></li>
-          <li><a href="https://github.com/adityacs50-lab" rel="me noopener" target="_blank">github — adityacs50-lab</a></li>
-          <li><span>@adityashinde.dev</span></li>
-        </ul>
-
-        <aside class="marginalia" data-margin>
-          <span class="marginalia-mark" aria-hidden="true">✦</span>
-          Margins intentionally left wide.
-        </aside>
-
-        <p class="colophon-note mono" data-reveal>
-          set in fraunces, newsreader &amp; ibm plex mono · built by hand — html, css, a little gsap ·
-          © 2026 aditya shinde · vol. i, first impression
-        </p>
+    <!-- ── credentials ticker ── -->
+    <div class="ticker ticker-dim" aria-label="Credentials">
+      <div class="ticker-track mono">
+        <span>MCKINSEY FORWARD '26 ✕ HARVARD ASPIRE LEADERS '26 ✕ ANTHROPIC CLAUDE 101 ✕ PALANTIR FOUNDRY &amp; AIP ✕ BCG STRATEGY + GENAI ✕ ANDREW NG AGENTIC AI ✕ DELOITTE CYBER ✕ JPMORGAN SWE ✕ E-CELL AMBASSADOR — IIT M/K/G ✕&nbsp;</span>
+        <span>MCKINSEY FORWARD '26 ✕ HARVARD ASPIRE LEADERS '26 ✕ ANTHROPIC CLAUDE 101 ✕ PALANTIR FOUNDRY &amp; AIP ✕ BCG STRATEGY + GENAI ✕ ANDREW NG AGENTIC AI ✕ DELOITTE CYBER ✕ JPMORGAN SWE ✕ E-CELL AMBASSADOR — IIT M/K/G ✕&nbsp;</span>
       </div>
+    </div>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <footer class="contact" id="contact" aria-labelledby="contact-h">
+      <p class="contact-kicker mono" data-reveal>have something that needs building?</p>
+      <h2 id="contact-h" class="contact-title" data-reveal>
+        <a href="mailto:shindeadityau@gmail.com">LET'S<br>TALK<span class="title-arrow" aria-hidden="true">→</span></a>
+      </h2>
+      <div class="contact-grid mono" data-reveal>
+        <a href="mailto:shindeadityau@gmail.com">shindeadityau@gmail.com</a>
+        <a href="https://www.linkedin.com/in/aditya-shinde-ai/" rel="me noopener" target="_blank">linkedin ↗</a>
+        <a href="https://github.com/adityacs50-lab" rel="me noopener" target="_blank">github ↗</a>
+        <span>@adityashinde.dev</span>
+      </div>
+      <p class="contact-note mono" data-reveal>© 2026 aditya shinde — built by hand · html / css / gsap / webgl</p>
     </footer>
 
   </main>
@@ -560,5 +214,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/scene.js" type="module"></script>
 </body>
 </html>
