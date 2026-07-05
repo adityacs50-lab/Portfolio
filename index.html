@@ -548,7 +548,7 @@
         </aside>
 
         <p class="colophon-note mono" data-reveal>
-          set in fraunces, newsreader &amp; ibm plex mono · built by hand — html, css, a little gsap ·
+          set in fraunces, newsreader &amp; ibm plex mono · built by hand — html, css, a little gsap &amp; webgl ·
           © 2026 aditya shinde · vol. i, first impression
         </p>
       </div>
@@ -556,9 +556,15 @@
 
   </main>
 
+  <!-- live survey readout (visible only when the WebGL terrain is running) -->
+  <p class="survey-hud mono" aria-hidden="true">
+    live survey — <span data-hud-pts>0</span> pts · scroll = traverse
+  </p>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/scene.js" type="module"></script>
 </body>
 </html>

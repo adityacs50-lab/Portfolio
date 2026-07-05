@@ -107,6 +107,22 @@
     new Promise(function (res) { setTimeout(res, 2000); })
   ]).then(runHero);
 
+  /* ── the initial leans with the light (fine pointers only) ── */
+  if (window.matchMedia('(pointer: fine)').matches) {
+    var illum = document.querySelector('.illum-wrap');
+    if (illum) {
+      var tiltX = gsap.quickTo(illum, 'rotationY', { duration: 0.9, ease: 'power3.out' });
+      var tiltY = gsap.quickTo(illum, 'rotationX', { duration: 0.9, ease: 'power3.out' });
+      gsap.set(illum, { transformPerspective: 700 });
+      window.addEventListener('pointermove', function (e) {
+        var nx = (e.clientX / window.innerWidth) * 2 - 1;
+        var ny = (e.clientY / window.innerHeight) * 2 - 1;
+        tiltX(nx * 7);
+        tiltY(ny * -5);
+      }, { passive: true });
+    }
+  }
+
   /* ── quiet scroll reveals ──────────────────────────────────── */
   if (window.ScrollTrigger) {
     gsap.utils.toArray('[data-reveal]').forEach(function (el) {
