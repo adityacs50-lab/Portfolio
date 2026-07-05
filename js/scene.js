@@ -30,11 +30,11 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     return;
   }
 
-  var INK = new THREE.Color('#0C0B09');
-  var SLATE_DEEP = new THREE.Color('#22303C');
-  var SLATE_LIT = new THREE.Color('#8FA0B0');
-  var BRASS = new THREE.Color('#C9A227');
-  var OXBLOOD = new THREE.Color('#A03A34');
+  var INK = new THREE.Color('#0B0C0A');
+  var SLATE_DEEP = new THREE.Color('#1C2414');
+  var SLATE_LIT = new THREE.Color('#7FA84A');
+  var BRASS = new THREE.Color('#BFFF38');
+  var OXBLOOD = new THREE.Color('#EDEDE8');
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   renderer.setPixelRatio(dpr);
@@ -159,7 +159,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
       '  col = mix(col, uBrass, vLine * 0.8);',
       // rare oxblood beacons — survey markers in the dark
       '  if (vSeed > 0.9965) col = uOxblood;',
-      '  float alpha = soft * vFade * (0.13 + vLine * 0.3 + step(0.9965, vSeed) * 0.28);',
+      '  float alpha = soft * vFade * (0.11 + vLine * 0.32 + step(0.9965, vSeed) * 0.26);',
       '  gl_FragColor = vec4(col, alpha);',
       '}'
     ].join('\n')
