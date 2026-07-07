@@ -11,36 +11,20 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasGsap = typeof window.gsap !== 'undefined';
 
-  /* ── smooth scroll (Lenis) ─────────────────────────────────── */
-  var lenis = null;
-  if (!reduced && typeof window.Lenis !== 'undefined') {
-    lenis = new window.Lenis({ lerp: 0.11 });
-
-    if (hasGsap && window.ScrollTrigger) {
-      window.gsap.registerPlugin(window.ScrollTrigger);
-      lenis.on('scroll', window.ScrollTrigger.update);
-      window.gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-      window.gsap.ticker.lagSmoothing(0);
-    } else {
-      var raf = function (time) { lenis.raf(time); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
-  } else if (hasGsap && window.ScrollTrigger) {
+  if (hasGsap && window.ScrollTrigger) {
     window.gsap.registerPlugin(window.ScrollTrigger);
   }
 
-  /* anchor navigation through Lenis, offset for the masthead */
+  /* anchor navigation offset for the masthead */
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="#"]');
     if (!link) return;
     var target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    if (lenis) {
-      lenis.scrollTo(target, { offset: -70 });
-    } else {
-      target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
-    }
+    
+    // Fallback to native smooth scroll behavior
+    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
   });
 
   if (!hasGsap || reduced) return; // page stays fully visible; nothing to stage
