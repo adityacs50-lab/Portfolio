@@ -21,6 +21,9 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ══ Scroll progress ══ -->
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar"></span></div>
+
   <!-- ══ Ambient contour etching (fixed, faint) ══ -->
   <div class="etching" aria-hidden="true"></div>
 
@@ -30,7 +33,9 @@
       <span class="mark-title">The Builder's Codex</span>
     </a>
     <nav class="masthead-nav mono" aria-label="Codex contents">
+      <span class="nav-pill" aria-hidden="true"></span>
       <a href="#preface">Preface</a>
+      <a href="#dispatch">Dispatch</a>
       <a href="#ventures">Ventures</a>
       <a href="#commissions">Commissions</a>
       <a href="#catalog">Catalog</a>
@@ -43,6 +48,7 @@
 
     <!-- ═══════════ HERO — THE ILLUMINATED OPENER ═══════════ -->
     <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero-spotlight" aria-hidden="true"></div>
       <svg class="hero-contours contour-parallax" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <g fill="none" stroke="#C9A227" stroke-opacity="0.05">
           <path d="M600,120 C790,128 900,240 884,392 C868,544 726,626 574,604 C422,582 330,462 352,320 C372,190 470,114 600,120 Z"/>
@@ -160,6 +166,82 @@
         </aside>
       </div>
     </section>
+
+    <!-- ═══════════ DISPATCH — CURRENT POSTING ═══════════ -->
+    <section class="folio" id="dispatch" aria-labelledby="dispatch-h">
+      <div class="folio-inner">
+        <header class="folio-head" data-reveal>
+          <p class="folio-no mono">Dispatch</p>
+          <h2 id="dispatch-h">Currently in the Field</h2>
+          <p class="folio-sub">The latest posting — logged as it happens.</p>
+          <div class="folio-rule" aria-hidden="true"><span>✦</span></div>
+        </header>
+
+        <article class="plate plate-compact" id="flowden" data-reveal>
+          <header class="plate-head">
+            <p class="plate-no mono">Pl. FLD-001 · offer received 17 jul 2026</p>
+            <h3 class="plate-title">Full Stack Developer Intern — Flowden</h3>
+            <p class="plate-kicker">Building the AI-powered "Startup OS" for founders</p>
+          </header>
+          <div class="plate-body">
+            <p>
+              Working directly with the founder on Flowden's web platform — shipping product
+              features and wiring in the AI layer that gives founders a single operating system for
+              running their company. Remote, three months, hands in the actual codebase from
+              day one.
+            </p>
+          </div>
+          <ul class="data-strip mono" aria-label="Flowden posting data">
+            <li>role — full stack · ai integration</li>
+            <li>remote — 3 months</li>
+            <li>2026 —</li>
+            <li class="data-status">offer accepted</li>
+          </ul>
+          <aside class="marginalia" data-margin>
+            <span class="marginalia-mark" aria-hidden="true">✦</span>
+            Straight to the founder — no layers in between.
+          </aside>
+        </article>
+
+        <p class="marginalia marginalia-free" data-margin>
+          <span class="marginalia-mark" aria-hidden="true">✦</span>
+          Recent rooms entered: <strong style="color: var(--bone); font-style: normal;">India Builds with Claude</strong> —
+          Razorpay × Anthropic, Bangalore (16 Jul 2026) · <strong style="color: var(--bone); font-style: normal;">Agentic AI for
+          Fintech Enterprises</strong> STTP, TSEC (6–11 Jul 2026), completed.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════ MARQUEE — DOMAIN TICKER ═══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>SLAM</span><span class="marquee-dot">✦</span>
+        <span>Sensor Fusion</span><span class="marquee-dot">✦</span>
+        <span>Agentic AI</span><span class="marquee-dot">✦</span>
+        <span>FastAPI</span><span class="marquee-dot">✦</span>
+        <span>Next.js</span><span class="marquee-dot">✦</span>
+        <span>Supabase</span><span class="marquee-dot">✦</span>
+        <span>Groq</span><span class="marquee-dot">✦</span>
+        <span>Claude API</span><span class="marquee-dot">✦</span>
+        <span>LightGBM</span><span class="marquee-dot">✦</span>
+        <span>RAG</span><span class="marquee-dot">✦</span>
+        <span>GSAP</span><span class="marquee-dot">✦</span>
+        <span>TF-IDF</span><span class="marquee-dot">✦</span>
+        <!-- duplicate set for a seamless -50% loop -->
+        <span>SLAM</span><span class="marquee-dot">✦</span>
+        <span>Sensor Fusion</span><span class="marquee-dot">✦</span>
+        <span>Agentic AI</span><span class="marquee-dot">✦</span>
+        <span>FastAPI</span><span class="marquee-dot">✦</span>
+        <span>Next.js</span><span class="marquee-dot">✦</span>
+        <span>Supabase</span><span class="marquee-dot">✦</span>
+        <span>Groq</span><span class="marquee-dot">✦</span>
+        <span>Claude API</span><span class="marquee-dot">✦</span>
+        <span>LightGBM</span><span class="marquee-dot">✦</span>
+        <span>RAG</span><span class="marquee-dot">✦</span>
+        <span>GSAP</span><span class="marquee-dot">✦</span>
+        <span>TF-IDF</span>
+      </div>
+    </div>
 
     <!-- ═══════════ FOLIO I — VENTURES ═══════════ -->
     <section class="folio" id="ventures" aria-labelledby="ventures-h">
@@ -456,6 +538,8 @@
         </header>
 
         <ul class="credentials mono" data-reveal aria-label="Credentials">
+          <li>India Builds with Claude — Razorpay × Anthropic, Bangalore, 2026</li>
+          <li>Agentic AI for Fintech Enterprises — STTP, TSEC, 2026</li>
           <li>McKinsey Forward — Selected Fellow, 2026</li>
           <li>Harvard Aspire Leaders '26</li>
           <li>Anthropic Claude 101</li>
