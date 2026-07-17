@@ -111,26 +111,6 @@ a:hover { color: var(--brass); }
 }
 .skip-link:focus { top: 0.75rem; }
 
-/* ── scroll progress ─────────────────────────────────────────── */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  z-index: 55;
-  background: transparent;
-  pointer-events: none;
-}
-.scroll-progress-bar {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, var(--oxblood-bright), var(--brass));
-  transform: scaleX(0);
-  transform-origin: 0 0;
-}
-
 /* ── masthead ────────────────────────────────────────────────── */
 .masthead {
   position: fixed;
@@ -172,52 +152,24 @@ a:hover { color: var(--brass); }
 }
 
 .masthead-nav {
-  position: relative;
   display: flex;
-  gap: clamp(0.2rem, 0.6vw, 0.4rem);
+  gap: clamp(0.9rem, 2.2vw, 1.8rem);
   overflow-x: auto;
   scrollbar-width: none;
 }
 .masthead-nav::-webkit-scrollbar { display: none; }
-
-/* floating active-section pill — tracks scroll position via JS,
-   purely decorative (absolute, out of flow) so animating its
-   width/left never reflows surrounding content */
-.nav-pill {
-  position: absolute;
-  top: 50%;
-  height: 1.85rem;
-  transform: translateY(-50%);
-  background: var(--brass-faint);
-  border: 1px solid var(--brass-dim);
-  border-radius: 999px;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 0;
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.3s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .nav-pill { transition: opacity 0.2s ease; }
-}
-
 .masthead-nav a {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--bone-dim);
   text-decoration: none;
-  padding: 0.5rem 0.8rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
   white-space: nowrap;
-  border-radius: 999px;
-  transition: color 0.2s ease;
 }
-.masthead-nav a:hover { color: var(--brass); }
-.masthead-nav a.is-active { color: var(--brass); }
+.masthead-nav a:hover { color: var(--brass); border-bottom-color: var(--brass-dim); }
 
 /* ── hero — the illuminated opener ───────────────────────────── */
 .hero {
@@ -230,14 +182,6 @@ a:hover { color: var(--brass); }
   justify-content: center;
   text-align: center;
   padding: 7rem clamp(1.25rem, 5vw, 3rem) 4rem;
-  perspective: 1200px;
-}
-
-.illum-wrap {
-  transition: transform 0.2s ease-out;
-}
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .illum-wrap { will-change: transform; }
 }
 
 .hero-contours {
@@ -246,23 +190,6 @@ a:hover { color: var(--brass); }
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-/* cursor-tracked ambient glow — desktop pointer only, purely additive light,
-   never affects layout (position:absolute, pointer-events:none) */
-.hero-spotlight {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  background: radial-gradient(460px circle at var(--spot-x, 50%) var(--spot-y, 40%),
-    rgba(201, 162, 39, 0.12), transparent 70%);
-}
-.hero-spotlight.is-active { opacity: 1; }
-@media (prefers-reduced-motion: reduce), (hover: none) {
-  .hero-spotlight { display: none; }
 }
 
 .hero-kicker {
@@ -345,48 +272,8 @@ a:hover { color: var(--brass); }
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  display: inline-block;
-  padding: 0.4rem 0.6rem;
-  will-change: transform;
-  transition: transform 0.15s ease-out, color 0.2s ease;
 }
 .hero-cue:hover { color: var(--brass); }
-
-/* ── marquee strip (decorative tech/domain ticker) ───────────── */
-.marquee {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding: 1.15rem 0;
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-}
-.marquee-track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  gap: 2.25rem;
-  animation: marquee-scroll 42s linear infinite;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slate-text);
-  white-space: nowrap;
-}
-.marquee-dot { color: var(--brass-dim); }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
-  .marquee { overflow-x: auto; }
-}
 
 /* ── folio scaffolding ───────────────────────────────────────── */
 .folio {
@@ -399,7 +286,6 @@ a:hover { color: var(--brass); }
   position: relative;
   max-width: 46rem;
   margin: 0 auto;
-  perspective: 1400px; /* gives scroll-reveal rotateX/translateZ real depth */
 }
 .folio-inner-wide { max-width: 68rem; }
 
@@ -500,8 +386,6 @@ section[id], article[id], footer[id] { scroll-margin-top: 5.5rem; }
 
 /* ── plates ──────────────────────────────────────────────────── */
 .plate {
-  position: relative;
-  z-index: 0;
   border: 1px solid var(--line);
   outline: 1px solid var(--line-soft);
   outline-offset: 5px;
@@ -511,32 +395,8 @@ section[id], article[id], footer[id] { scroll-margin-top: 5.5rem; }
   background-size: auto, 620px 620px;
   padding: clamp(1.5rem, 4vw, 2.75rem);
   margin-bottom: clamp(3.25rem, 7vh, 5.5rem);
-  transition: border-color 0.4s ease, transform 0.12s ease-out;
 }
 .plate:last-child { margin-bottom: 0; }
-
-/* cursor-tracked spotlight glow — z-index:-1 keeps it beneath the plate's
-   own content (a fresh stacking context is established by z-index:0 above),
-   so it never obscures text; opacity/transform only, no reflow */
-.plate::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(201, 162, 39, 0.10), transparent 72%);
-}
-.plate.is-glowing::after { opacity: 1; }
-
-.plate:hover { border-color: var(--brass-faint); }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  /* base lift; JS overrides with a live 3D tilt matrix on mousemove */
-  .plate:hover { transform: translateY(-2px); }
-  .plate { transform-style: preserve-3d; will-change: transform; }
-}
 
 .plate-head { margin-bottom: 1.5rem; }
 
@@ -628,37 +488,18 @@ section[id], article[id], footer[id] { scroll-margin-top: 5.5rem; }
 }
 
 .specimen {
-  position: relative;
-  z-index: 0;
   border: 1px solid var(--line);
   background: rgba(20, 17, 12, 0.5);
   padding: 1.4rem 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: border-color 0.35s ease, background-color 0.35s ease, transform 0.12s ease-out;
+  transition: border-color 0.35s ease, background-color 0.35s ease;
 }
 .specimen:hover {
   border-color: var(--brass-faint);
   background: rgba(24, 20, 14, 0.65);
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .specimen:hover { transform: translateY(-3px); }
-  .specimen { transform-style: preserve-3d; will-change: transform; }
-}
-
-.specimen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(201, 162, 39, 0.10), transparent 72%);
-}
-.specimen.is-glowing::after { opacity: 1; }
 
 .specimen-no {
   display: flex;
