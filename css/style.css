@@ -398,6 +398,27 @@ section[id], article[id], footer[id] { scroll-margin-top: 5.5rem; }
 }
 .plate:last-child { margin-bottom: 0; }
 
+/* flagship plate — elevated treatment for the top venture */
+.plate-flagship {
+  border-color: var(--brass-faint);
+  border-left: 3px solid var(--brass);
+  outline-color: var(--brass-faint);
+  background:
+    linear-gradient(rgba(20, 17, 12, 0.45), rgba(20, 17, 12, 0.45)),
+    var(--contour-tile);
+  background-size: auto, 620px 620px;
+  box-shadow:
+    0 0 60px -20px rgba(201, 162, 39, 0.10),
+    inset 0 1px 0 rgba(201, 162, 39, 0.08);
+}
+.plate-flagship .plate-no {
+  color: var(--brass);
+  font-weight: 500;
+}
+.plate-flagship .plate-kicker {
+  max-width: 58ch;
+}
+
 .plate-head { margin-bottom: 1.5rem; }
 
 .plate-no {
